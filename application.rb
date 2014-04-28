@@ -28,5 +28,10 @@ class Application < Sinatra::Application
     redirect '/foods'
   end
 
+  get '/foods/:id' do
+    food_row = DB[:foods].where(:id => params[:id])
+    erb :show, locals: {:single_food => food_row }
+  end
+
 
 end

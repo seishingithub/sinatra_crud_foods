@@ -2,5 +2,6 @@
 <a href="/foods/new">Add Food</a>
 
 <% foods.each do |food| %>
-  <%= food[:name] %>
+  <a href="/foods/<%= food[:id] %>"><%= food[:name] %></a>
 <% end %>
+
